@@ -21,7 +21,7 @@ L'application doit pouvoir assurer un suivi des logements que l'agence immobili�
 * Chaque logement est accompagné de plusieurs photos. Chacune de ces photos doivent pouvoir être accompagnée d'un commentaire. 
 * Chaque logement dispose d'un nombre de pièces, d'un nombre de chambres, d'une surface en mètre carrés, d'un tarif, d'une description, d'une référence interne, d'une performance énergétique (ex : 253 kWhEP/m2/an), d'un indice d'émission de GES (ex : 8kgeqCO2/m2/an) et d'un type de prestation (location/vente)
 * Les types de logement ainsi que les types de prestation doivent pouvoir être configurables.
-* Chaque logement est également associé à son propriétaire actuel. Hormis le nom, prénom et genre, ce dernier doit pouvoir être joignable (tel, email, adresse...). Les propriétaires ne disposent pas de compte au sein de l'application.
+* Chaque logement est également associé à son propriétaire actuel. Les fiches propriétaires ont un nom, prénom et genre, mais également des champs facultatifs tels que: tel, email, adresse... Les propriétaires ne disposent pas de compte au sein de l'application.
 
 Au sein de l'application, le personnel de l'agence dispose de comptes utilisateurs permettant de rajouter des commentaires sur la fiche d'un logement. Sachant que plusieurs commentaires doivent pouvoir être listés sur un logement, rangés par date de création.
 Ils sont également habilités à rajouter des commentaires sur les fiches des propriétaires.
