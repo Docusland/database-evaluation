@@ -1,0 +1,14 @@
+3.1
+
+Je n'arrive pa à trouver quoi écrire exactement dans le SELECT donc je vais essayé de la faire en français
+
+
+SELECT logement. quelque chose
+
+FROM logement, proprietaire, adresses 
+
+WHERE proprietaire.prenom = "Xavier" 
+
+AND proprietaire.nom = "Niel"
+
+AND adresse.ville = "Calais"

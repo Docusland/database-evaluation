@@ -1,0 +1,50 @@
+Réalisation scripts - Partie texte
+
+2.1
+
+Réaliser un trigger qui, lorsque la photo a été modifiée, stocke au sein 
+
+d'une table anciennes_photos les anciennes images référencées.
+
+Ceci peut être pratique pour automatiser un script qui parcourera cette table et supprimera les fichiers référencés.
+
+code :
+
+CREATE TABLE anciennes_photos (id INT PRIMARY KEY NOT NULL AUTO_INCREMENT , path VARCHAR(255));
+
+DELIMITER //
+
+CREATE TRIGGER  update_photo
+    BEFORE UPDATE
+    ON photos FOR EACH ROW
+
+BEGIN  
+    IF OLD.photo != NEW.photo 
+    THEN
+        INSERT INTO anciennes_photos (path) VALUES (OLD.photo);
+    END IF 
+
+END //
+DELIMITER ;
+
+
+2.2
+
+Lister les utilisateurs qui n'ont pas de mail et de téléphone de renseigné puis, faire un script permettant de mettre à jour
+
+uniquement ces utilisateurs là avec comme parametre le numéro de téléphone et un autre script avec comme parametre le mail.
+
+Cela permet de renseigner à l'utilisateur dans un premier temps un premier parametre et de réduire la liste d'affectation pour le script.
+
+Si aucunes des 2 informations ne peut être remplie alors supprimer le propriétaire car une des 2 informations est obligatoire.
+
+
+2.3
+
+Dès que possible, enregister chaque changement de prix d'un logement dans une autre table.
+
+dans cette table on y met un: id type PK int non null, prix type double non null et id_logement FK int.
+
+Ensuite créer l'enregistrement dans la table correspondant à chaque nouvelle saisie d'un nouveau prix en récupérant l'ancienne valeur
+
+Faire de même pour le changement de statut
