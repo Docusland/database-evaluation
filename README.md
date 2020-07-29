@@ -48,8 +48,8 @@ Bon courage !
 
 Détaillez sommairement à l'écrit puis réalisez l'ensemble des scripts SQL ou adaptations de la base de données répondant aux exigences ci-dessous. Attention, cette épreuve concerne la base de données, nul autre language que le SQL n'est attendu : 
 
- - 2.1 Lorsqu'un utilisateur modifie les photos associées à une maison, les photos anciennement liées doivent être retirées du serveur. Proposez une solution.
- - 2.1 Il peut arriver de modifier voire supprimer les photos liées à une maison. Les anciennes
+ - 2.1 Lorsqu'un utilisateur modifie les photos associées à une maison, les photos anciennement liées doivent être retirées du serveur. 
+ - 2.1 Il peut arriver de modifier voire supprimer les photos liées à une maison. Les anciennes photos doivent être retirées du serveur d'une manière ou d'une autre. Comment vous y prendriez-vous. Proposez une solution.
  - 2.2 La base de données actuellement existante n'a pas forcément l'intégrité des données attendues au sein de la nouvelle application. Les fiches propriétaires ne sont pas toutes complètes. Lors de la création ou mise à jour d'un propriétaire, il doit être obligatoire d'avoir le téléphone et/ou le mail de défini. Quelle solution proposez-vous?
  - 2.3 Le tarif d'un logement a tendance à varier en fonction de l'offre et de la demande ainsi que de l'ancienneté de l'annonce. Il doit être possible d'avoir un historique des différentes tarifications d'un logement. Le changement de statut doit également être historisé au sein de l'application. Proposez une solution.
 
