@@ -62,5 +62,5 @@ Proposez deux requêtes SQL:
 ### 4 - Optimisez votre base de données (3 pts)
 
 Imaginons que la base de données que vous avez conçue soit utilisée au sein d'une application conçue par une autre équipe de développeur.
-Listez ici les recommandations que vous pourriez leur apporter pour l'administration, l'optimisation et la gestion de la base de données.
+Listez ici les recommandations que vous pourriez leur apporter pour l'administration et l'optimisation de la base de données.
  
