@@ -6,8 +6,11 @@ Evaluation réalisée le 29 Juillet 2020.
 ### 1 - Modélisation de la base de données (7 pts)
 
  - 1.1 Réaliser le dictionnaire de données
+ Voir dictionnaireDonnee.pdf
  - 1.2 Réaliser le Modèle Entité Association
+ Voir MEA_base_imo.png
  - 1.3 Réaliser le Modèle Physique de Données
+ Voir MPD_base_imo.png
 
 ### 2 - Réaliser des scripts (trigger/procedure...) (6 pts)
 
@@ -58,5 +61,11 @@ Ce qu’il faudrait faire pour faire en sorte d’optimiser cette base de donné
 Il faudrait aussi revoir les dataType en fonction des valeurs de données qui sont utiliser ( si l’on utilise un varchar(255) mais que lors de l’utilisation de la base de donnée on se rend compte qu’il est trop élever par rapport aux données rentrée alors il faut le modifier pour qu’il puisse correspondre et prendre soin de place dans la bdd ).
 
 
+
+
+
+Je tiens vraiment à m'excuser de la pauvreté de mon devoir malheureusement j'ai pris plus de temps que prévu sur certaines choses qui ne fonctionner pas. 
+Espérant que le peut que j'ai pu vous fournir vous apporteras suffisament d'élément pour pouvoir évaluer ce que j'ai appris sur les bases de données.
+Sur ce bonne continuation et merci pour ce cours fort intéressent.
 
  
