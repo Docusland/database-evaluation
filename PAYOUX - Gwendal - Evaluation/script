@@ -1,0 +1,104 @@
+DROP TABLE IF EXISTS Logement ;
+CREATE TABLE Logement (id_Logement INT(16) AUTO_INCREMENT NOT NULL,
+adresse_Logement VARCHAR(255),
+compAdr_Logement VARCHAR(255),
+nbPiece_Logement INT(4),
+nbChambre_Logement INT(4),
+surface_Logement INT,
+tarif_Logement INT,
+perfEnergie_Logement INT,
+emisGES_Logement INT,
+refInterne_Logement VARCHAR(64),
+description_Logement VARCHAR,
+id_StatutLogement **NOT FOUND**(16),
+id_TypeLogement **NOT FOUND**(16),
+id_TypePrestation **NOT FOUND**(16),
+id_Proprietaire **NOT FOUND**(16),
+id_Ville **NOT FOUND**(16),
+PRIMARY KEY (id_Logement)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Professionnel ;
+CREATE TABLE Professionnel (id_Professionnel INT(16) AUTO_INCREMENT NOT NULL,
+nom_Professionnel VARCHAR(64),
+prenom_Professionnel VARCHAR(64),
+mail_Professionnel VARCHAR(255),
+PRIMARY KEY (id_Professionnel)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Commentaire ;
+CREATE TABLE Commentaire (id_Commentaire INT(16) AUTO_INCREMENT NOT NULL,
+texte_Commentaire VARCHAR,
+publication_Commentaire DATETIME,
+proprietaire_id_proprietaire **NOT FOUND**(16),
+id_Professionnel **NOT FOUND**(16),
+logement_id_logement **NOT FOUND**(16),
+PRIMARY KEY (id_Commentaire)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS TypeLogement ;
+CREATE TABLE TypeLogement (id_TypeLogement INT(4) AUTO_INCREMENT NOT NULL,
+nom_TypeLogement VARCHAR(64),
+PRIMARY KEY (id_TypeLogement)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS TypePrestation ;
+CREATE TABLE TypePrestation (id_TypePrestation INT(4) AUTO_INCREMENT NOT NULL,
+nom_TypePrestation VARCHAR(64),
+PRIMARY KEY (id_TypePrestation)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Proprietaire ;
+CREATE TABLE Proprietaire (id_Proprietaire INT(16) AUTO_INCREMENT NOT NULL,
+nom_Proprietaire VARCHAR(64),
+prenom_Proprietaire VARCHAR(64),
+telephone_Proprietaire VARCHAR(32),
+mail_Proprietaire VARCHAR(64),
+adresse_Proprietaire VARCHAR,
+compAdr_Proprietaire VARCHAR(255),
+id_Genre **NOT FOUND**(16),
+id_Ville **NOT FOUND**(16),
+PRIMARY KEY (id_Proprietaire)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Photo ;
+CREATE TABLE Photo (id_Photo INT(16) AUTO_INCREMENT NOT NULL,
+chemin_Photo VARCHAR,
+description_Photo VARCHAR,
+id_Logement **NOT FOUND**(16),
+PRIMARY KEY (id_Photo)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS StatutLogement ;
+CREATE TABLE StatutLogement (id_StatutLogement INT(4) AUTO_INCREMENT NOT NULL,
+nom_StatutLogement VARCHAR(64),
+PRIMARY KEY (id_StatutLogement)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Genre ;
+CREATE TABLE Genre (id_Genre INT(4) AUTO_INCREMENT NOT NULL,
+nom_Genre VARCHAR(64),
+PRIMARY KEY (id_Genre)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Ville ;
+CREATE TABLE Ville (id_Ville INT(16) AUTO_INCREMENT NOT NULL,
+nom_Ville VARCHAR(64),
+PRIMARY KEY (id_Ville)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS CodePostal ;
+CREATE TABLE CodePostal (id_CodePostal INT(16) AUTO_INCREMENT NOT NULL,
+numero_CodePostal INT(5),
+PRIMARY KEY (id_CodePostal)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Localiser ;
+CREATE TABLE Localiser (id_Ville **NOT FOUND**(16) AUTO_INCREMENT NOT NULL,
+id_CodePostal **NOT FOUND**(16) NOT NULL,
+PRIMARY KEY (id_Ville,
+ id_CodePostal)) ENGINE=InnoDB;
+
+ALTER TABLE Logement ADD CONSTRAINT FK_Logement_id_StatutLogement FOREIGN KEY (id_StatutLogement) REFERENCES StatutLogement (id_StatutLogement);
+
+ALTER TABLE Logement ADD CONSTRAINT FK_Logement_id_TypeLogement FOREIGN KEY (id_TypeLogement) REFERENCES TypeLogement (id_TypeLogement);
+ALTER TABLE Logement ADD CONSTRAINT FK_Logement_id_TypePrestation FOREIGN KEY (id_TypePrestation) REFERENCES TypePrestation (id_TypePrestation);
+ALTER TABLE Logement ADD CONSTRAINT FK_Logement_id_Proprietaire FOREIGN KEY (id_Proprietaire) REFERENCES Proprietaire (id_Proprietaire);
+ALTER TABLE Logement ADD CONSTRAINT FK_Logement_id_Ville FOREIGN KEY (id_Ville) REFERENCES Ville (id_Ville);
+ALTER TABLE Commentaire ADD CONSTRAINT FK_Commentaire_proprietaire_id_proprietaire FOREIGN KEY (proprietaire_id_proprietaire) REFERENCES Proprietaire (id_Proprietaire);
+ALTER TABLE Commentaire ADD CONSTRAINT FK_Commentaire_id_Professionnel FOREIGN KEY (id_Professionnel) REFERENCES Professionnel (id_Professionnel);
+ALTER TABLE Commentaire ADD CONSTRAINT FK_Commentaire_logement_id_logement FOREIGN KEY (logement_id_logement) REFERENCES Logement (id_Logement);
+ALTER TABLE Proprietaire ADD CONSTRAINT FK_Proprietaire_id_Genre FOREIGN KEY (id_Genre) REFERENCES Genre (id_Genre);
+ALTER TABLE Proprietaire ADD CONSTRAINT FK_Proprietaire_id_Ville FOREIGN KEY (id_Ville) REFERENCES Ville (id_Ville);
+ALTER TABLE Photo ADD CONSTRAINT FK_Photo_id_Logement FOREIGN KEY (id_Logement) REFERENCES Logement (id_Logement);
+ALTER TABLE Localiser ADD CONSTRAINT FK_Localiser_id_Ville FOREIGN KEY (id_Ville) REFERENCES Ville (id_Ville);
+ALTER TABLE Localiser ADD CONSTRAINT FK_Localiser_id_CodePostal FOREIGN KEY (id_CodePostal) REFERENCES CodePostal (id_CodePostal);
