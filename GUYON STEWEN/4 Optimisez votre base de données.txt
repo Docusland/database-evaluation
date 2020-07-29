@@ -1,0 +1,4 @@
+- Optimiser la configuration
+- Optimiser les requêtes SQL
+- Utiliser la mise en cache
+- Maintenir la base de données
