@@ -1,0 +1,42 @@
+# script créé le : Tue Aug 04 19:21:57 CEST 2020 ;
+
+# use  VOTRE_BASE_DE_DONNEE ;
+
+DROP TABLE IF EXISTS proprietaire_genre ;
+
+CREATE TABLE proprietaire_genre (id_proprietaire_genre int AUTO_INCREMENT NOT NULL,
+type_proprietaire_genre VARCHAR(20),
+PRIMARY KEY (id_proprietaire_genre) ) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS proprietaire ;
+
+CREATE TABLE proprietaire (id_proprietaire int AUTO_INCREMENT NOT NULL,
+fixe_proprietaire VARCHAR(12),
+tel_proprietaire VARCHAR(12),
+mail_proprietaire VARCHAR(100),
+PRIMARY KEY (id_proprietaire) ) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS habitation_type ;
+
+CREATE TABLE habitation_type (id_habitation_type int AUTO_INCREMENT NOT NULL,
+nom_habitation_type VARCHAR(20),
+PRIMARY KEY (id_habitation_type) ) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS habitation ;
+
+CREATE TABLE habitation (id_habitation int AUTO_INCREMENT NOT NULL,
+adresse_habitation VARCHAR(255),
+surface_habitation INT,
+nb_piece_habitation INT(11),
+nb_chambre_habitation INT(11),
+tarif_habitation INT,
+perf_energetic_habitation INT,
+emission_ges_habitation INT,
+PRIMARY KEY (id_habitation) ) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS habitation_prestation ;
+
+CREATE TABLE habitation_prestation (id_habitation_prestation int AUTO_INCREMENT NOT NULL,
+type_habitation_prestation VARCHAR(20),
+PRIMARY KEY (id_habitation_prestation) ) ENGINE=InnoDB;
+
