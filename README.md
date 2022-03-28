@@ -1,11 +1,8 @@
-# Evaluation du module : Database Administration
-Evaluation réalisée le 29 Juillet 2020.
-
-B2 Info DEV - Campus Academy Rennes
+# DATABASE : Modélisation MCD et MPD
 
 Formateur: Erwann DUCLOS
 
-L'évaluation se porte sur l'acquisition de techniques et de bonnes pratiques concernant l'implémentation d'une base de données.
+L'évaluation se porte sur l'acquisition de techniques et de bonnes pratiques concernant la modélisatione et l'implémentation d'une base de données.
 
 \clearpage
 ## Contexte
@@ -38,13 +35,13 @@ Il est attendu de recevoir une merge request sur ce dépôt d'ici 16h30.
 
 Bon courage !
 
-### 1 - Modélisation de la base de données (7 pts)
+### 1 - Modélisation de la base de données
 
  - 1.1 Réaliser le dictionnaire de données
- - 1.2 Réaliser le Modèle Entité Association
+ - 1.2 Réaliser le Modèle Conceptuel de Données
  - 1.3 Réaliser le Modèle Physique de Données
 
-### 2 - Réaliser des scripts (trigger/procedure...) (6 pts)
+### 2 - Réaliser des scripts (trigger/procedure...)
 
 Détaillez sommairement à l'écrit puis réalisez l'ensemble des scripts SQL ou adaptations de la base de données répondant aux exigences ci-dessous. Attention, cette épreuve concerne la base de données, nul autre language que le SQL n'est attendu : 
 
@@ -52,14 +49,14 @@ Détaillez sommairement à l'écrit puis réalisez l'ensemble des scripts SQL ou
  - 2.2 La base de données actuellement existante n'a pas forcément l'intégrité des données attendues au sein de la nouvelle application. Les fiches propriétaires ne sont pas toutes complètes. Lors de la création ou mise à jour d'un propriétaire, il doit être obligatoire d'avoir le téléphone et/ou le mail de défini. Quelle solution proposez-vous?
  - 2.3 Le tarif d'un logement a tendance à varier en fonction de l'offre et de la demande ainsi que de l'ancienneté de l'annonce. Il doit être possible d'avoir un historique des différentes tarifications d'un logement. Le changement de statut doit également être historisé au sein de l'application. Proposez une solution.
 
-### 3 - Réaliser une requête SQL. (4 pts)
+### 3 - Réaliser une requête SQL
 
 Proposez deux requêtes SQL:
 
 - 3.1 Une requête qui permet de retourner l'ensemble des informations sur les logements situés à Calais appartenant au propriétaire 'Xavier Niel'
 - 3.2 Une requête qui retourne la valeur moyenne des biens immobiliers vendus ordonnés dans le temps avec une granularité journalière. (Certains jours aucune vente n'a lieu. Il est attendu de ne pas avoir de ligne pour ces jours là)
 
-### 4 - Optimisez votre base de données (3 pts)
+### 4 - Optimisez votre base de données
 
 Imaginons que la base de données que vous avez conçue soit utilisée au sein d'une application conçue par une autre équipe de développeur.
 Listez ici les recommandations que vous pourriez leur apporter pour l'administration et l'optimisation de la base de données.
